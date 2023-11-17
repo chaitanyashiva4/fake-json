@@ -17,7 +17,7 @@ const generateFakeJson=() => {
 };
 
 export async function GET(request: NextRequest) {
-    const data: { id: string; name: string; avatar: string; registeredAt: Date; }[] | any = [];
+    const data: { id: string; name: string;sport:string;league:string;address:string;country:string; avatar: string;logoUri:string; registeredAt: Date; }[] | any = [];
     Array.from({ length: 5 }).forEach(() => {
         data.push(generateFakeJson())
     }

@@ -8,14 +8,20 @@ export default function Home() {
   const [data, setData] = useState([{
     "id": "",
     "name": "",
-    "avatar": ""
+    "sport": "",
+    "league": "",
+    "address": "",
+    "country": "",
+    "avatar": "",
+    "logoUri":"",
+    "registeredAt":""
   }])
 
   useEffect(() => {
     const loadData = generateMulFakeData(5)
     console.log(loadData)
     setData(loadData)
-  },[] )
+  }, [])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -26,8 +32,15 @@ export default function Home() {
         <div>
           {
             data.map((item, index) => (
-              <div key={index}>
+              <div key={index} className='m-2 p-1'>
+                <p>Id:{item.id}</p>
                 <p>name:{item.name}</p>
+                <p>Sport:{item.sport}</p>
+                <p>League:{item.league}</p>
+                <p>Address:{item.address}</p>
+                <p>Country:{item.country}</p>
+                <p>Avatar:{item.avatar}</p>
+                <p>LogoUrl:{item.logoUri}</p>
               </div>
             ))
           }
